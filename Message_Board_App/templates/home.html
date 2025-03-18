@@ -1,0 +1,12 @@
+<!-- templates/home.html -->
+{% extends "base.html" %}
+
+{% block title %}HomePage{% endblock title %}
+
+{% block content %}
+<h1>Message Board HomePage</h1>
+
+{% for post in posts_list %}
+    <li>{{ post.text }}</li>
+{% endfor %}
+{% endblock content %}
