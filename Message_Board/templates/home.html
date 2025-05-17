@@ -1,0 +1,11 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+{% block title %}Monuments of India{% endblock title %}
+{% block content %}
+    <h1>Monuments of India</h1>
+    <ul>
+        {% for post in post_list %}
+            <li>{{post.text}}</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}
