@@ -1,0 +1,28 @@
+body{
+    padding: 0px;
+    margin: 0px;
+}
+
+header > h1 > a {
+    color: red;
+    text-align: center;
+    display: block;
+    padding: 0%;
+    margin: 0px;
+    font-size: 150%;
+    text-decoration: none;
+}
+
+.post-entry{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 130%;
+    border:2px solid black;
+    border-radius: 10px;
+    margin: 1%;
+    padding: 1%
+}
+
+.post-entry > h2 > a{
+    text-decoration: none;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
