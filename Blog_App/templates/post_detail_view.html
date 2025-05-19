@@ -1,3 +1,4 @@
+<!-- templates/post_detail_view.html -->
 {% extends "base.html" %}
 {% block title %}
 {{komal.title}}
@@ -7,5 +8,6 @@
 <div class="post-entry">
     <h2>{{komal.title}}</h2>
     <p>{{komal.body}}</p>
+    <a href="{% url 'post_edit' komal.pk %}">Edit Post</a>
 </div>
 {% endblock content %}

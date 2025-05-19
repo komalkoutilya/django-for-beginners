@@ -3,14 +3,21 @@ body{
     margin: 0px;
 }
 
-header > h1 > a {
+.main-heading > h1 > a {
+    display: block;
     color: red;
     text-align: center;
-    display: block;
-    padding: 0%;
-    margin: 0px;
     font-size: 150%;
     text-decoration: none;
+}
+
+.add-post > a{
+    display: block;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-left: 90%;
+    text-decoration: none;
+    color: coral;
+    font-size: 150%;
 }
 
 .post-entry{

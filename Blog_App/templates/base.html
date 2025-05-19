@@ -9,9 +9,14 @@
 
     <body>
         <header>
-            <h1><a href="{% url 'home' %}">Django Blogs</a></h1>
-            <hr>
+            <div class="main-heading">
+                <h1><a href="{% url 'home' %}">Django Blogs</a></h1>
+            </div>
+            <div class="add-post">
+                <a href="{% url 'post_new' %}">+ Add Post</a>
+            </div>
         </header>
+        <hr>
         <div>
             {% block content %}{% endblock content %}
         </div>
