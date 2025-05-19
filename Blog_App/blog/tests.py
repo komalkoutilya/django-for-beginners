@@ -53,3 +53,33 @@ class BlogTests(TestCase):
 
         no_response=self.client.get("/post/1000/") #post-doesn't exists
         self.assertEqual(no_response.status_code,404) #status not found error
+
+    def test_blog_create_view(self):
+        response=self.client.post(reverse("post_new"),{
+            "title":"TEST_BLOG_CREATE_POST_TITLE",
+            "author":self.user.id,
+            "body":"TEST_BLOG_CREATE_POST_BODY"
+        })
+
+        self.assertEqual(response.status_code,302)
+        self.assertEqual(Post.objects.last().title, "TEST_BLOG_CREATE_POST_TITLE")
+        self.assertEqual(Post.objects.last().body, "TEST_BLOG_CREATE_POST_BODY")
+        self.assertEqual(Post.objects.last().author, self.user)
+
+    def test_blog_update_view(self):
+        response=self.client.post(reverse("post_edit",args=[Post.objects.last().pk]),{
+            "title":"TEST_BLOG_UPDATE_POST_TITLE",
+            "body":"TEST_BLOG_UPDATE_POST_BODY"
+        })
+
+        self.assertEqual(response.status_code,302)
+        self.assertEqual(Post.objects.last().title,"TEST_BLOG_UPDATE_POST_TITLE")
+        self.assertEqual(Post.objects.last().body,"TEST_BLOG_UPDATE_POST_BODY")
+        self.assertEqual(Post.objects.last().author, self.user)
+
+    def test_blog_delete_view(self):
+        to_be_deleted_object_pk=Post.objects.last().pk
+        response=self.client.post(reverse("post_delete",args=[Post.objects.last().pk]))
+        self.assertEqual(response.status_code,302)
+        no_response=self.client.get("/post/{}/".format(to_be_deleted_object_pk))
+        self.assertEqual(no_response.status_code,404)
