@@ -9,5 +9,7 @@
     <h2>{{komal.title}}</h2>
     <p>{{komal.body}}</p>
     <a href="{% url 'post_edit' komal.pk %}">Edit Post</a>
+    &nbsp;&nbsp;&nbsp;
+    <a href="{% url 'post_delete' komal.pk %}">Delete Post</a>
 </div>
 {% endblock content %}
