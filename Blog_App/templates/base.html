@@ -12,13 +12,29 @@
             <div class="main-heading">
                 <h1><a href="{% url 'home' %}">Django Blogs</a></h1>
             </div>
+
             <div class="add-post">
                 <a href="{% url 'post_new' %}">+ Add Post</a>
+            </div>
+
+            <div class="greeting">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'home' %}">Hello, {{user.username}}</a> &nbsp; &nbsp;
+                    <a href="{% url 'logout' %}">Log Out</a>
+                {% else %}
+                    <a href="{% url 'login' %}">Log In</a> &nbsp; &nbsp;
+                    <a href="{% url 'signup' %}">Sign Up</a>
+                {% endif %}
             </div>
         </header>
         <hr>
         <div>
             {% block content %}{% endblock content %}
         </div>
+
+        <footer>
+            <a href="http://www.djangoproject.com/"><img src="https://www.djangoproject.com/m/img/badges/djangopowered126x54.gif" border="0" alt="Powered by Django." title="Powered by Django." /></a>
+        </footer>
+
     </body>
  </html>
