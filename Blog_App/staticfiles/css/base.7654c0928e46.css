@@ -1,0 +1,71 @@
+body{
+    padding: 0px;
+    margin: 0px;
+}
+
+header{
+    display: inline-block;
+    width: 100%;
+}
+
+.main-heading > h1 > a {
+    display: block;
+    color: red;
+    text-align: center;
+    font-size: 150%;
+    text-decoration: none;
+}
+
+.add-post > a{
+    display: block;
+    float: right;
+    width: fit-content;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-decoration: none;
+    color: coral;
+    font-size: 150%;
+    background-color: antiquewhite;
+    padding: 0.5%;
+    border-radius: 5px;
+    border: 2px solid black;
+    text-align: right;
+}
+
+.greeting{
+    display: inline-block;
+    width:100%;
+}
+.greeting > a{
+    display: inline;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-left: 0.5%;
+    text-decoration: none;
+    color: rgb(4, 109, 138);
+    font-size: 150%;
+    background-color: antiquewhite;
+    padding: 0.5%;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+.post-entry{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 130%;
+    border:2px solid black;
+    border-radius: 10px;
+    margin: 1%;
+    padding: 1%
+}
+
+.post-entry > h2 > a{
+    text-decoration: none;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+footer{
+    bottom: 0px;
+    right: 0px;
+    position: fixed;
+    margin-left: auto;
+    margin-right: 1%;
+}
